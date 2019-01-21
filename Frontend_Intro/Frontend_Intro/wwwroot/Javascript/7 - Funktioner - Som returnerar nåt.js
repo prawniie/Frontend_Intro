@@ -2,7 +2,10 @@
 //funRet2();
 //funRet3();
 //funRet4();
-funRet5();
+//funRet5();
+//funRetExtra1();
+funRetExtra2();
+
 
 function funRet1() {
 
@@ -147,7 +150,18 @@ function funRetExtra1() {
         Antal år till pension: 0
     */
 
+    console.log(`Antal år till pension: ${timeUntilRetirement(43)}`);
+    console.log(`Antal år till pension: ${timeUntilRetirement(20)}`);
+    console.log(`Antal år till pension: ${timeUntilRetirement(68)}`);
+    console.log(`Antal år till pension: ${timeUntilRetirement(100)}`);
 
+}
+
+function timeUntilRetirement(age) {
+    if (age > 65)
+        return 0;
+    else
+        return 65 - age;
 }
 
 function funRetExtra2() {
@@ -170,4 +184,18 @@ function funRetExtra2() {
         Momsen för en/ett hipsteröl som kostar 1000kr är 250kr
     */
 
+    printProductInfo("paper", 50);
+    printProductInfo("restaurant visit", 300);
+    printProductInfo("flight", 3000);
+    printProductInfo("falafel", 65);
+    printProductInfo("hipsteröl", 75);
+}
+
+function calculateTax(price) {
+    return price * 0.25;
+}
+
+function printProductInfo(product, price) {
+
+    console.log(`TAX for a ${product} is ${calculateTax(price)} kr`);
 }
