@@ -88,6 +88,8 @@ function cond5() {
 
     if (shoeMaria > 50 || shoeAli > 50 || bigFoot > 50)
         console.log('At least one of them has a shoesize larger than 50!');
+
+    //if(alla variabler.some(x => x > 50)) Annat sätt att skriva det på!
 }
 
 function cond6() {
@@ -159,6 +161,8 @@ function cond8() {
         console.log('Thats the same!');
     else
         console.log('Thats not the same!');
+
+    //Bra att använda om man vill vara jättenoga med att den jämför samma typ!!
 
 }
 

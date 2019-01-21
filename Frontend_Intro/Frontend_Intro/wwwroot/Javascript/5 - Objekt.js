@@ -1,5 +1,8 @@
 ﻿//obj1();
-obj2();
+//obj2();
+//obj3();
+//obj4();
+objExtra1();
 
 function obj1() {
 
@@ -8,6 +11,8 @@ function obj1() {
         Skriv ut förnamnet
         Skriv ut hans fullständiga namn
     */
+
+    //skapa objekt: let x = {}
 
     let person = { firstName: 'Johan', lastName: 'Rheborg', birthYear: '1967' };
     console.log(person.firstName);
@@ -36,6 +41,8 @@ function obj2() {
         rolesPlayed: ['Percy Nilegård','Farbror Barbro']
     };
 
+    //kan också skapa nytt objekt i objektet se oscars kod på adressen
+
     console.log(`${person.firstName} is born in ${person.birthYear}`);
     console.log(`${person.firstName} lives at ${person.street}`);
     console.log(`${person.firstName} has played 3 roles, one of which is ${person.rolesPlayed[0]}`);
@@ -55,6 +62,25 @@ function obj3() {
        Tips: använd "padEnd" för att skriva ut tabellen snyggt
     */
 
+    let paintings = [{ name:'Mona Lisa', artist:'Leonardo da Vinci', year: '1503' }, { name:'Skriet', artist:'Edvard Munch', year:'1893'}, { name:'Guernica', artist:'Pablo Picasso', year:1937}];
+    console.log(`There are ${paintings.length} paintings`);
+    //console.log(`${paintings[0].artist} painted ${paintings[0].name} in ${paintings[0].year}`);
+    //console.log(`${paintings[1].artist} painted ${paintings[1].name} in ${paintings[1].year}`);
+    //console.log(`${paintings[2].artist} painted ${paintings[2].name} in ${paintings[2].year}`);
+
+
+    //let counter = 0;
+
+    //while (counter < paintings.length) {
+    //    console.log(`${paintings[counter].artist} painted ${paintings[counter].name} in ${paintings[counter].year}`);
+    //    counter++
+    //}
+
+    for (let painting of paintings) {
+        console.log(`${painting.artist} painted ${painting.name} in ${painting.year}`);
+    }
+
+
 }
 
 function obj4() {
@@ -65,6 +91,19 @@ function obj4() {
        Använd "pop" för att plocka bort de tre sista målningarna
        Skriv ut antalet målningar i arrayen 
     */
+
+    let paintings = [{ name: 'Mona Lisa', artist: 'Leonardo da Vinci', year: '1503' }, { name: 'Skriet', artist: 'Edvard Munch', year: '1893' }, { name: 'Guernica', artist: 'Pablo Picasso', year: 1937 }];
+
+    let stjärnenatt = { name: 'Stjärnenatt', artist: 'Vincent van Gogh', year: '1889' };
+    paintings.push(stjärnenatt);
+
+    console.log(paintings[3].year);
+
+    paintings.pop();
+    paintings.pop();
+    paintings.pop();
+
+    console.log(paintings.length);
 
 }
 
@@ -80,4 +119,22 @@ function objExtra1() {
             Johan Rheborg
             Johan Rheborg har spelat i 3 roller
     */
+
+    let person = {
+        firstName: 'Johan',
+        lastName: 'Rheborg',
+        birthYear: '1967',
+        street: 'Björnbärsvägen 14',
+        city: 'Borås',
+        country: 'Sweden',
+        rolesPlayed: ['Percy Nilegård', 'Farbror Barbro']
+    };
+
+    let fullName = fullName(person.firstName, person.lastName);
+    console.log(fullName);
+}
+
+function fullName(firstName, lastName) {
+    let fullName = firstName + ' ' + lastName;
+    return fullName;
 }

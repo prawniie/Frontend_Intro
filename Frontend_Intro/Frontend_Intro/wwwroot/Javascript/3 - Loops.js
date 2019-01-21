@@ -12,7 +12,7 @@ function loop1() {
         Använd en for-loop för att skriva ut alla siffror mellan 5 och 18
     */
 
-    for (var i = 5; i < 19; i++) {
+    for (let i = 5; i < 19; i++) {
         console.log(i);
     }
 }
@@ -23,7 +23,7 @@ function loop2() {
         Använd en for-loop för att skriva ut alla siffror mellan 0 och 9
     */
 
-    for (var i = 0; i < 10; i++) {
+    for (let i = 0; i < 10; i++) {
         console.log(i);
     }
 }
@@ -39,7 +39,7 @@ function loop3() {
             "Siffran 8 är tjusig"
     */
 
-    for (var i = 4; i < 9; i++) {
+    for (let i = 4; i < 9; i++) {
         console.log(`The number ${i} is pretty`);
     }
 }
@@ -63,7 +63,9 @@ function loop5() {
 
     /*
 	    Skapa en array "importantYears" med årtalen 1492, 1789, 1859, 1929
-        Använd "for of" för att skriva ut alla årtal
+        Använd "for of" för att skriva ut alla årtal 
+        - SAMMA SOM FOREACH I C#
+        - FOR OF INTE IN 
     */
 
     let importantYears = [1492, 1789, 1859, 1929];
@@ -84,11 +86,11 @@ function loop6() {
         */
 
         let importantYears = [1492, 1789, 1859, 1929];
-        let counter = 1;
+        let rowNumber = 1;
 
         for (let year of importantYears) {
-            console.log(`${counter}) ${year}`);
-            counter++;
+            console.log(`${rowNumber}) ${year}`);
+            rowNumber++;
         }
             
         
