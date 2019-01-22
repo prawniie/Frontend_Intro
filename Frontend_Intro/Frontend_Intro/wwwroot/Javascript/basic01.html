@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>basic01</title>
+</head>
+<body>
+    <h1 id="header">Rubrik</h1>
+
+    <p>Some text</p>
+
+    <button id="button01">Change header</button>
+    <button id="button02">Change header's color</button>
+
+    <script>
+
+        let button01 = document.getElementById("button01");
+
+        button01.addEventListener("click", () => {
+            document.getElementById("header").innerText = "New header";
+        });
+
+        let button02 = document.getElementById("button02");
+
+        button02.addEventListener("click", () => {
+            document.getElementById("header").style.color = "red";
+        });
+
+    </script>
+</body>
+</html>

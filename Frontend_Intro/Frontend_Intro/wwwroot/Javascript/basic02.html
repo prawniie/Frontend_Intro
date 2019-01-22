@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>basic02</title>
+
+    <style>
+        button {
+            display: block;
+            padding: 10px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1 id="header">Header</h1>
+
+    <button id="button01">Green every other time</button>
+    <button id="button02">Change button size</button>
+    <button id="button03">Hover mouse over me</button>
+
+    <script>
+
+        let button01 = document.getElementById("button01");
+        let isGreen = false;
+        let header = document.getElementById("header");
+
+        function toggleGreenColor() {
+            isGreen = !isGreen;
+            if (isGreen) {
+                header.style.color = "green";
+            }
+            else {
+                header.style.color = "black";
+            }
+
+        }
+
+        button01.addEventListener("click", toggleGreenColor);
+
+        let button02 = document.getElementById("button02");
+        let padding = 10;
+
+        function paddington() {
+            padding += 10;
+            button02.style.padding = `${padding}px`
+        }
+
+        button02.addEventListener("click", paddington);
+
+
+        let button03 = document.getElementById("button03");
+
+        button03.addEventListener("mouseover", () => {
+            //alert('changing to red')
+            button03.style.color = red;
+        });
+
+        button03.addEventListener("mouseout", () => {
+            //alert('changing to black')
+            button03.style.color = black;
+        });
+
+    </script>
+
+</body>
+</html>

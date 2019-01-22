@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>number-sequence</title>
+    <style>
+        input, button, div {
+            display: block;
+            font-size: 30px;
+            font-family: Arial;
+            margin-bottom: 20px
+        }
+
+        button, input {
+            width: 100%;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>Enter a number: </div>
+    <input type="text" id="yourNumber" />
+    <button id="okButton">Ok</button>
+
+    <div id="response"></div>
+
+    <script>
+
+        function respondToUser() {
+            let yourNumber = document.getElementById("yourNumber").value;
+
+            let inputIsValidNumber = parseInt(yourNumber) == yourNumber;
+            let numlist = [];
+
+            if (inputIsValidNumber) {
+                for (var i = 1; i <= yourNumber; i++) {
+                    numlist.push(i);
+                }
+                document.getElementById("response").innerText = numlist.join(",");
+
+            }
+            else {
+                document.getElementById("response").innerText = "You have to enter a valid number!";
+            }
+        }
+
+        document.getElementById("okButton").addEventListener("click", respondToUser)
+
+    </script>
+
+</body>
+</html>

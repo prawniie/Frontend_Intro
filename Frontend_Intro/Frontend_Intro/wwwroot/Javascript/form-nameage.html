@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+
+<!--Användaren matar in sitt namn och ålder. Svara enligt bilden nedan.
+
+Om användaren matar in "Oscar" och "43" skriv "I like you!"-->
+
+<html>
+<head>
+    <title>form-nameage</title>
+
+    <style>
+
+        * {
+            font-family: Arial;
+            padding: 10px;
+            border-radius: 3px;
+        }
+
+        button {
+            display: block;
+            margin: 10px;
+            padding: 0px 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div>Enter your name: </div>
+    <input type="text" id="yourName" placeholder="Write here.." />
+
+    <div>Enter your age: </div>
+    <input type="text" id="yourAge" placeholder="Write here.." />
+    <button id="okButton">Ok</button>
+    <br />
+
+    <div id="response" class="response"></div>
+
+    <script>
+
+        function respondToUser() {
+            let yourAge = document.getElementById("yourAge").value;
+            let yourName = document.getElementById("yourName").value;
+            let response = "";
+
+            if (yourAge == 43 && yourName == "Oscar")
+                response = "I like you!"
+            else 
+                response = `You are ${yourAge} years old and your name is ${yourName}`
+
+            document.getElementById("response").innerHTML = response;
+        }
+
+        document.getElementById("okButton").addEventListener("click", respondToUser);
+
+    </script>
+
+</body>
+</html>
