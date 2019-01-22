@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>bulb1</title>
+
+    <style>
+        body {
+            background-color:black;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="bulbButtons">
+        <button id="lightBulbButton">Light bulb</button>
+    </div>
+
+    <div id="placeForBulbImg"></div>
+
+    <script>
+
+        let lightIsOn = false;
+        let lightBulbButton = document.getElementById("lightBulbButton");
+        let placeForBulbImg = document.getElementById("placeForBulbImg");
+
+        function turnOnLight() {
+            lightIsOn = !lightIsOn
+
+            if (lightIsOn) {
+                placeForBulbImg.innerHTML = `<img src="bulb-off.jpg">`;
+            }
+            else {
+                placeForBulbImg.innerHTML = `<img src="bulb-on.jpg">`;
+            }
+
+        }
+
+        lightBulbButton.addEventListener("click", turnOnLight);
+
+        turnOnLight();
+
+    </script>
+    
+</body>
+</html>
