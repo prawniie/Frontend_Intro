@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>basic03</title>
+    <style>
+        button {
+            display: block;
+            margin: 10px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    
+    <button id="catButton">Show cat</button>
+    <div id="goodPlaceForCat"></div>
+
+    <button id="textButton">Print some text</button>
+    <input id="yourText" />
+
+    <button id="textFromUserButton">Print some text from textbox</button>
+    
+    <div id="sometext"></div>
+
+    <script>
+
+        let catButton = document.getElementById("catButton");
+        let displayingCat = true;
+
+        function toggleCatPicture() {
+            let goodPlaceForCat = document.getElementById("goodPlaceForCat");
+
+            displayingCat = !displayingCat
+
+            if (displayingCat) {
+                goodPlaceForCat.innerHTML = "";
+            }
+            else 
+                goodPlaceForCat.innerHTML = `<img src="https://www.readersdigest.ca/wp-content/uploads/sites/14/2011/01/4-ways-cheer-up-depressed-cat.jpg">`
+        }
+
+        catButton.addEventListener("click", toggleCatPicture);
+
+        let sometext = document.getElementById("sometext");
+        let textButton = document.getElementById("textButton");
+
+        textButton.addEventListener("click", () => {
+            sometext.innerHTML = sometext.innerHTML + '<br>Soon we will go home..'
+        });
+
+
+        let textFromUserButton = document.getElementById("textFromUserButton");
+        let userText = document.getElementById("yourText");
+
+        textFromUserButton.addEventListener("click", () => {
+            let textToPrint = userText.value;
+            if (textToPrint == "")
+                alert('You have to write something!')
+            else {
+                sometext.innerHTML = sometext.innerHTML + "<br>" + textToPrint;
+            }
+
+        });
+
+
+    </script>
+
+</body>
+</html>
