@@ -50,11 +50,11 @@ function funRet2() {
 
 }
 
-function superImportant2(text, trueOrFalse) {
+function superImportant2(text, upper) {
 
     let result;
 
-    if (trueOrFalse == true) 
+    if (upper == true) 
         result = `****** ${text.toUpperCase()} ******`;
     
     else
@@ -126,8 +126,8 @@ function funRet5() {
 }
 
 function isMyndig(age) {
-    let isMyndig = (age >= 18) ? true : false;
-    return isMyndig;
+    return (age >= 18) ? true : false;
+    
 }
 
 // -------- EXTRA UPPGIFTER -----------------------------------------

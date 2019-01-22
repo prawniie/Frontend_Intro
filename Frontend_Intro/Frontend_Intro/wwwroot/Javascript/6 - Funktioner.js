@@ -1,7 +1,10 @@
 ﻿//fun1();
 //fun2();
 //fun3();
-fun4();
+//fun4();
+//extraFun1();
+//extraFun2();
+extraFun3();
 
 function fun1() {
 
@@ -113,6 +116,17 @@ function extraFun1() {
         * PENNA
         * LUKTSUDDIGUM
     */
+
+    toBuyList(["Skruv", "Hammare", "Vattenpass"]);
+    toBuyList(["Penna", "Luktsuddigum"]);
+}
+
+function toBuyList(stuff) {
+    console.log('To buy:'.toUpperCase());
+
+    for (let thing of stuff)
+        console.log(`* ${thing.toUpperCase()}`);
+
 }
 
 function extraFun2() {
@@ -132,6 +146,14 @@ function extraFun2() {
         * KÅLROT
     */
 
+    recipe("Äpplekaka", ["Äpple", "Mjöl", "Kanel"]);
+    recipe("Rotmos", ["Potatis", "Kålrot"]);
+}
+
+function recipe(recipeName, ingredients) {
+    console.log(`In order to do ${recipeName} you need: `.toUpperCase());
+    for (let ingredient of ingredients)
+        console.log(`* ${ingredient}`.toUpperCase());
 }
 
 function extraFun3() {
@@ -153,6 +175,53 @@ function extraFun3() {
         Momsen för en/ett falafel som kostar 1000kr är 250kr
         Momsen för en/ett hipsteröl som kostar 1000kr är 250kr
     */
+
+    printTax('restaurant visit', 500);
+    printTax('flight', 3000);
+    printTax('paper', 60);
+    printTax('makeup', 60);
+
+}
+
+function printTax(product, price) {
+    let message;
+
+    //let tax;
+    //let message;
+    //switch (product) {
+    //    case "restaurant visit":
+    //        tax = 0.25;
+    //        console.log(`The TAX for a ${product} is ${price * tax}`);
+    //        break;
+    //    case "paper":
+    //        tax = 0.12;
+    //        console.log(`The TAX for a ${product} is ${price * tax}`);
+    //        break;
+    //    case "flight":
+    //        tax = 0.25;
+    //        console.log(`The TAX for a ${product} is ${price * tax}`);
+    //        break;
+    //    default:
+    //        console.log(`Sorry I dont know the TAX for ${product}`);
+
+    //}
+
+    switch (product) {
+        case "restaurant visit":
+            message = `The TAX for a ${product} is ${price * 0.25}`;
+            break;
+        case "paper":
+            message = `The TAX for a ${product} is ${price * 0.12}`;
+            break;
+        case "flight":
+            message = `The TAX for a ${product} is ${price * 0.25}`;
+            break;
+        default:
+            message = `Sorry I dont know the TAX for ${product}`;
+            break;
+
+    }
+    console.log(message);
 
 }
 
