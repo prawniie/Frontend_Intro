@@ -70,11 +70,21 @@
             function turnOnLight() {
                 lightIsOn = !lightIsOn
 
+                let placeForBulb = 'placeForBulbImg';
+                bulbIndex++;
+
+                if (bulbIndex >= bulbs.length)
+                    bulbIndex = 0;
+
+                placeForBulb = placeForBulb + bulbIndex;
+
+                let placeForBulbImg = document.getElementById(placeForBulb);
+
                 if (lightIsOn) {
-                    placeForBulb.innerHTML = `<img src="bulb-off.jpg">`;
+                    placeForBulbImg.innerHTML = `<img src="bulb-off.jpg">`;
                 }
                 else {
-                    placeForBulb.innerHTML = `<img src="bulb-on.jpg">`;
+                    placeForBulbImg.innerHTML = `<img src="bulb-on.jpg">`;
                 }
             }
 
@@ -89,9 +99,11 @@
                 placeForBulbImg.innerHTML = `<img src="bulb-off.jpg">`;
             }
 
-            function updateState() {
-
-            }
+            //function updateState() {
+            //    bulbIndex++;
+            //    if (bulbIndex >= bulbs.length)
+            //        bulbIndex = 0;
+            //}
 
             lightBulbButton.addEventListener("click", turnOnLight);
 
