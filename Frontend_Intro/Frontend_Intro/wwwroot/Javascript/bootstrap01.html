@@ -10,20 +10,29 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
     <style>
+
+        * {
+            /*border: 1px solid black;*/
+        }
+
         img {
             max-width: 100%;
             height: auto;
         }
 
         .container {
-            border: 1px solid black;
             padding: 20px;
         }
 
         .jumbotron {
             background-color: #f8d7da;
             color: #b1706e;
-            height: 20px;
+            padding: 0.4em;
+            text-align: center;
+        }
+
+        .jumbotron p {
+            padding-top: 0.5em;
         }
 
         .question {
@@ -35,9 +44,7 @@
 <body>
 
     <div class="container">
-
         <img class="img-fluid" src="cat.jpg" />
-
     </div>
     <!--anv collapse grejen mellan container-->
     <div class="container">
@@ -47,7 +54,7 @@
             Vänsterledaren Jonas Sjöstedts nya besked för att rädda Stefan Löfven: Han är beredd att släppa fram en S-ledd regering där Annie Lööf och Jan Björklund ingår – även om det egna partiet stängs ute. – Det kan komma lägen där man måste förhandla för att lösa en svår situation, och därför utesluter vi inte det, säger han i kvällens "Bara Politik" i Expressen TV.
         </p>
 
-        <div class="jumbotron align-items-center">
+        <div class="jumbotron container">
             <p>Varning varning varning!</p>
         </div>
 
@@ -70,29 +77,39 @@
 
         <p>
             – Nej alltså, vi vill helst ha en regering utan borgerliga partier, det gäller fortfarande. Men det kan komma lägen när man vet valutslaget då man måste förhandla för att lösa en svår situation, och därför utesluter vi inte det – även om vi fortfarande föredrar en regering utan borgerliga inslag.
-
         </p>
 
-        <div class="container">
-            <p>
-                Jonas Sjöstedt utesluter inte heller att Vänsterpartiet kan stödja en borgerlig kandidat till talmansposten i omröstningen på måndag. – Jag tycker det naturliga är att vi gör som vi gjort förut. Störst parti från störst block har talmannen, sen har största parti från det andra blocket vice talman. Men skulle det bli en stor förhandling, då är vi gärna med och hittar en helhetslösning. Om det inte sker tycker jag att Socialdemokraterna ska sätta upp en kandidat till talmansposten.
-
-            </p>
+        <div class="row">
+            <div class="col-4 offset-4">
+                <p>
+                    Jonas Sjöstedt utesluter inte heller att Vänsterpartiet kan stödja en borgerlig kandidat till talmansposten i omröstningen på måndag. – Jag tycker det naturliga är att vi gör som vi gjort förut. Störst parti från störst block har talmannen, sen har största parti från det andra blocket vice talman. Men skulle det bli en stor förhandling, då är vi gärna med och hittar en helhetslösning. Om det inte sker tycker jag att Socialdemokraterna ska sätta upp en kandidat till talmansposten.
+                </p>
+            </div>
         </div>
 
-        <h2>Sjöstedt vill bli vice statsminister</h2>
-        <button>Hoppla!</button>
+        <h2>Sjöstedt vill bli vice statsminister <button type="button" class="btn btn-secondary">Hoppla!</button></h2>
 
         <p>
             Vänsterledaren håller samtidigt fast vid att han borde bli vice statsminister – om partiet får en plats i nästa regering. – Det är helt rimligt om vi är en del av regeringen och vi är näst största parti där, då bör jag vara det. I kvällens program sågar han samtidigt statsministerns uttalande om att blockpolitiken är fördummande.
         </p>
 
 
-        <div class="clearfix">
+        <div class="row">
 
-            <p>– Jag tycker att motsättningen mellan höger och vänster är politikens huvudmotsättning, den är naturlig. Jag tror det är bra att politiken har tydliga skillnader. Jonas Sjöstedt kommenterar också Sverigedemokraternas nominering av Björn Söder till posten som andre vice talman.</p>
+            <div class="col">
+                <p>– Jag tycker att motsättningen mellan höger och vänster är politikens huvudmotsättning, den är naturlig. Jag tror det är bra att politiken har tydliga skillnader. Jonas Sjöstedt kommenterar också Sverigedemokraternas nominering av Björn Söder till posten som andre vice talman.</p>
+            </div>
 
-            <p>FIXA EMAIL OCH LÖSENORD INLOGG HÄR</p>
+            <div class="col">
+                <div class="form-group">
+                    <label for="inputEmail">Epost</label>
+                    <input type="email" class="form-control" id="inputEmail" placeholder="Enter email"/>
+                </div>
+                <div class="form-group">
+                    <label for="inputPassword">Lösenord</label>
+                    <input type="password" class="form-control" id="inputPassword" placeholder="Enter password"/>
+                </div>
+            </div>
 
         </div>
 
@@ -149,5 +166,7 @@
             </tbody>
         </table>
 
+        <a class="btn btn-primary btn-block" href="#" role="button">Tillbaka till toppen</a>
+        </div>
 </body>
 </html>
