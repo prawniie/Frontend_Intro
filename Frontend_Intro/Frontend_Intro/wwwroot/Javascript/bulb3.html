@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>bulb3</title>
+
+    <style>
+
+        body {
+            background-color: black;
+        }
+
+        .lightBulbs {
+            margin: 5px;
+            /*border: 1px solid white;*/
+            width: 180px;
+            float: left;
+        }
+
+        #lightBulbButton {
+            width: 50%;
+            padding: 10px;
+            margin: 10px;
+            font-family: Arial;
+            font-size: 20px;
+        }
+
+        img {
+            width: 200px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="bulbButtons">
+        <button id="lightBulbButton">Light all bulbs</button>
+    </div>
+
+    <div class="lightBulbs">
+        <div id="placeForBulbImg1"></div>
+    </div>
+
+    <div class="lightBulbs">
+        <div id="placeForBulbImg2"></div>
+    </div>
+
+    <div class="lightBulbs">
+        <div id="placeForBulbImg3"></div>
+    </div>
+
+    <script>
+
+        let lightBulbButton = document.getElementById("lightBulbButton");
+        let placeForBulbImg1 = document.getElementById("placeForBulbImg1");
+        let placeForBulbImg2 = document.getElementById("placeForBulbImg2");
+        let placeForBulbImg3 = document.getElementById("placeForBulbImg3");
+
+        let lightIsOn = false;
+
+        function turnOnAllLights() {
+            lightIsOn = !lightIsOn
+
+            if (lightIsOn) {
+                placeForBulbImg1.innerHTML = `<img src="bulb-off.jpg">`;
+                placeForBulbImg2.innerHTML = `<img src="bulb-off.jpg">`;
+                placeForBulbImg3.innerHTML = `<img src="bulb-off.jpg">`;
+
+            }
+            else {
+                placeForBulbImg1.innerHTML = `<img src="bulb-on.jpg">`;
+                placeForBulbImg2.innerHTML = `<img src="bulb-on.jpg">`;
+                placeForBulbImg3.innerHTML = `<img src="bulb-on.jpg">`;
+
+            }
+
+        }
+
+        lightBulbButton.addEventListener("click", turnOnAllLights);
+
+        turnOnAllLights();
+
+
+    </script>
+
+</body>
+</html>
