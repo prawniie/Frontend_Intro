@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>bulb4</title>
+
+    <style>
+
+        body {
+            background-color: black;
+        }
+
+        .lightBulbs {
+            margin: 5px;
+            /*border: 1px solid white;*/
+            width: 180px;
+            float: left;
+        }
+
+        #lightBulbButton {
+            width: 50%;
+            padding: 10px;
+            margin: 10px;
+            font-family: Arial;
+            font-size: 20px;
+        }
+
+        img {
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="bulbButtons">
+        <button id="lightBulbButton">Press me</button>
+        </div>
+
+        <div class="lightBulbs">
+            <div id="placeForBulbImg1"></div>
+        </div>
+
+        <div class="lightBulbs">
+            <div id="placeForBulbImg2"></div>
+        </div>
+
+        <div class="lightBulbs">
+            <div id="placeForBulbImg3"></div>
+        </div>
+
+        <div class="lightBulbs">
+            <div id="placeForBulbImg4"></div>
+        </div>
+
+        <div class="lightBulbs">
+            <div id="placeForBulbImg5"></div>
+        </div>
+
+        <script>
+            let lightBulbButton = document.getElementById("lightBulbButton");
+            let placeForBulbImg1 = document.getElementById("placeForBulbImg1");
+            let placeForBulbImg2 = document.getElementById("placeForBulbImg2");
+            let placeForBulbImg3 = document.getElementById("placeForBulbImg3");
+            let placeForBulbImg4 = document.getElementById("placeForBulbImg4");
+            let placeForBulbImg5 = document.getElementById("placeForBulbImg5");
+
+            let bulbIndex = 0;
+            let bulbs = ['1', '2', '3', '4', '5'];
+
+            let lightIsOn = false;
+
+            function turnOnLight() {
+                lightIsOn = !lightIsOn
+
+                if (lightIsOn) {
+                    placeForBulb.innerHTML = `<img src="bulb-off.jpg">`;
+                }
+                else {
+                    placeForBulb.innerHTML = `<img src="bulb-on.jpg">`;
+                }
+            }
+
+
+            function drawBulbs() {
+                let placeForBulb = 'placeForBulbImg';
+                bulbIndex++;
+
+                placeForBulb = placeForBulb + bulbIndex;
+
+                let placeForBulbImg = document.getElementById(placeForBulb);
+                placeForBulbImg.innerHTML = `<img src="bulb-off.jpg">`;
+            }
+
+            function updateState() {
+
+            }
+
+            lightBulbButton.addEventListener("click", turnOnLight);
+
+            drawBulbs();
+            drawBulbs();
+            drawBulbs();
+            drawBulbs();
+            drawBulbs();
+
+
+        </script>
+</body>
+</html>
