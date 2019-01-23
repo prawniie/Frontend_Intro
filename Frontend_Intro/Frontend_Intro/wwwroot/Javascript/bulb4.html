@@ -7,11 +7,12 @@
 
         body {
             background-color: black;
+            font-family: Arial;
+            font-size: 20px;
         }
 
         .lightBulbs {
             margin: 5px;
-            /*border: 1px solid white;*/
             width: 180px;
             float: left;
         }
@@ -20,13 +21,21 @@
             width: 50%;
             padding: 10px;
             margin: 10px;
-            font-family: Arial;
-            font-size: 20px;
+
         }
 
         img {
             width: 100px;
         }
+
+        #currentBulb {
+            color: white;
+            float: left;
+            padding: 10px;
+            margin: 10px;
+            width: 100%;
+        }
+
     </style>
 </head>
 <body>
@@ -54,6 +63,9 @@
             <div id="placeForBulbImg5"></div>
         </div>
 
+    <div class="result">
+        <p id="currentBulb">Current bulb: </p></div>
+
         <script>
             let lightBulbButton = document.getElementById("lightBulbButton");
             let placeForBulbImg1 = document.getElementById("placeForBulbImg1");
@@ -66,19 +78,10 @@
             let bulbs = ['1', '2', '3', '4', '5'];
 
             let lightIsOn = false;
+            let placeForBulbImg;
 
             function turnOnLight() {
                 lightIsOn = !lightIsOn
-
-                let placeForBulb = 'placeForBulbImg';
-                bulbIndex++;
-
-                if (bulbIndex >= bulbs.length)
-                    bulbIndex = 0;
-
-                placeForBulb = placeForBulb + bulbIndex;
-
-                let placeForBulbImg = document.getElementById(placeForBulb);
 
                 if (lightIsOn) {
                     placeForBulbImg.innerHTML = `<img src="bulb-off.jpg">`;
@@ -90,28 +93,42 @@
 
 
             function drawBulbs() {
-                let placeForBulb = 'placeForBulbImg';
-                bulbIndex++;
-
-                placeForBulb = placeForBulb + bulbIndex;
-
-                let placeForBulbImg = document.getElementById(placeForBulb);
                 placeForBulbImg.innerHTML = `<img src="bulb-off.jpg">`;
             }
 
-            //function updateState() {
-            //    bulbIndex++;
-            //    if (bulbIndex >= bulbs.length)
-            //        bulbIndex = 0;
-            //}
+            function updateState() {
+                let placeForBulb = 'placeForBulbImg';
 
-            lightBulbButton.addEventListener("click", turnOnLight);
+                if (bulbIndex >= bulbs.length)
+                    bulbIndex = 0;
 
-            drawBulbs();
-            drawBulbs();
-            drawBulbs();
-            drawBulbs();
-            drawBulbs();
+                bulbIndex++;
+                placeForBulb = placeForBulb + bulbIndex;
+                placeForBulbImg = document.getElementById(placeForBulb);
+            }
+
+            function writeCurrentBulb() {
+                let currentBulb = document.getElementById("currentBulb");
+
+                if(bulbIndex != 0)
+                    currentBulb.innerHTML = 'Current bulb: ' + bulbIndex;
+
+            }
+
+            lightBulbButton.addEventListener("click", () => {
+                turnOnLight();
+                updateState();
+                turnOnLight();
+                writeCurrentBulb();
+            });
+
+            writeCurrentBulb();
+
+            updateState(), drawBulbs();
+            updateState(), drawBulbs();
+            updateState(), drawBulbs();
+            updateState(), drawBulbs();
+            updateState(), drawBulbs();
 
 
         </script>
