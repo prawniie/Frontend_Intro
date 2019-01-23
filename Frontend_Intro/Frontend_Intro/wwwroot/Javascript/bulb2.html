@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>bulb2</title>
+
+    <style>
+        body {
+            background-color: black;
+        }
+
+        .lightBulbs {
+            margin: 5px;
+            /*border: 1px solid white;*/
+            width: 180px;
+            float: left;
+        }
+
+        #placeForBulbImg1 {
+            width: 100%;
+            height: auto;
+        }
+
+        #lightBulbButton1, #lightBulbButton2, #lightBulbButton3 {
+            width: 50%;
+            padding: 10px;
+            margin: 10px;
+            font-family: Arial;
+            font-size: 20px;
+        }
+
+        img {
+            width: 200px;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div id="bulbButtons">
+        <button id="lightBulbButton1">Light bulb 1</button>
+        <button id="lightBulbButton2">Light bulb 2</button>
+        <button id="lightBulbButton3">Light bulb 3</button>
+
+    </div>
+
+    <div class="lightBulbs">
+        <div id="placeForBulbImg1"></div>
+    </div>
+
+    <div class="lightBulbs">
+        <div id="placeForBulbImg2"></div>
+    </div>
+
+    <div class="lightBulbs">
+        <div id="placeForBulbImg3"></div>
+    </div>
+
+
+    <script>
+
+        let lightIsOn = false;
+        let lightBulbButton1 = document.getElementById("lightBulbButton1");
+        let placeForBulbImg1 = document.getElementById("placeForBulbImg1");
+
+        function turnOnLight() {
+            lightIsOn = !lightIsOn
+
+            if (lightIsOn) {
+                placeForBulbImg1.innerHTML = `<img src="bulb-off.jpg">`;
+            }
+            else {
+                placeForBulbImg1.innerHTML = `<img src="bulb-on.jpg">`;
+            }
+
+        }
+
+        lightBulbButton1.addEventListener("click", turnOnLight);
+
+        turnOnLight();
+
+        let lightIsOn2 = false;
+        let lightBulbButton2 = document.getElementById("lightBulbButton2");
+        let placeForBulbImg2 = document.getElementById("placeForBulbImg2");
+
+        function turnOnLight2() {
+            lightIsOn2 = !lightIsOn2
+
+            if (lightIsOn2) {
+                placeForBulbImg2.innerHTML = `<img src="bulb-off.jpg">`;
+            }
+            else {
+                placeForBulbImg2.innerHTML = `<img src="bulb-on.jpg">`;
+            }
+
+        }
+
+        lightBulbButton2.addEventListener("click", turnOnLight2);
+
+        turnOnLight2();
+
+        let lightIsOn3 = false;
+        let lightBulbButton3 = document.getElementById("lightBulbButton3");
+        let placeForBulbImg3 = document.getElementById("placeForBulbImg3");
+
+        function turnOnLight3() {
+            lightIsOn3 = !lightIsOn3
+
+            if (lightIsOn3) {
+                placeForBulbImg3.innerHTML = `<img src="bulb-off.jpg">`;
+            }
+            else {
+                placeForBulbImg3.innerHTML = `<img src="bulb-on.jpg">`;
+            }
+
+        }
+
+        lightBulbButton3.addEventListener("click", turnOnLight3);
+
+        turnOnLight3();
+
+    </script>
+
+</body>
+</html>
